@@ -1,0 +1,52 @@
+{
+  "categories": {
+    "dot": [{
+      "issueId": 1,
+      "title": "bad roads",
+      "body": "Fix roads please",
+      "tags": [
+        "road",
+        "highway",
+        "street",
+        "pot holes"
+      ]
+    }, {
+      "issueId": 2,
+      "title": "bad traffic light",
+      "body": "Fix traffic light on colonial rd please",
+      "tags": [
+        "traffic light",
+        "colonial rd",
+        "hwy 50"
+      ]
+    }, {
+      "issueId": 3,
+      "title": "fallen tree on the road",
+      "body": "remove tree now!",
+      "tags": [
+        "road debris",
+        "i4 west bound",
+        "beautiful oak tree on the road"
+      ]
+    }],
+    "schools": [{
+      "issueId": 1,
+      "title": "schools bus zone",
+      "body": "expand bus zone please",
+      "tags": [
+        "school",
+        "orange county",
+        "some high school"
+      ]
+    },{
+      "issueId": 2,
+      "title": "no school by my house",
+      "body": "I live in st boonies and there are no schools around",
+      "tags": [
+        "need school",
+        "st boonies",
+        "brand new city"
+      ]
+    }]
+  }
+}
