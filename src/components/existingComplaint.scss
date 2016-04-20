@@ -1,7 +1,50 @@
 .existingComplaint {
-  border: 1px solid #C0C0C0;
-  border-radius: 3;
-  padding:15px;
+  padding: 5px 5px 15px 15px;
+  border: 1px solid #e2e2e2;
+  border-radius: 5px;
   width: 400px;
   margin: 10px
+}
+.existingComplaint .complaintTitle {
+  font-size: 18px;
+  padding-top: 5px;
+  color: #444444
+}
+
+.existingComplaint .complaintBody {
+  font-size: 14px;
+  min-height: 60px;
+  color: #b9b9b9
+}
+
+.existingComplaint .complaintInfo {
+  padding-top: 10px;
+  padding-right: 10px;
+  text-align: right;
+  font-size: 12px;
+  color: #4D9DE0
+}
+
+.existingComplaint .complaintVotes {
+  z-index:2;
+  width: 50px;
+  height: 50px;
+  float: right;
+  color: #F7B03F;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.existingComplaint .complaintVotes:hover {
+  background-color: #f1efef
+}
+
+.existingComplaint .voteText {
+  font-size: 10px
+}
+
+.existingComplaint .voteEmoji {
+  font-size: 16px
 }

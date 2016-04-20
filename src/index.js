@@ -6,7 +6,6 @@ import ReactDOM from 'react-dom';
 import './styles/main.scss';
 
 // Import dependencies like this:
-import Goat from './components/goat-component';
 import ExistingComplaint from './components/existingComplaint';
 import SearchBox from './components/SearchBox';
 
