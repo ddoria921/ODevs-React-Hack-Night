@@ -10,7 +10,9 @@ import ExistingComplaint from './components/existingComponent';
 import SearchBox from './components/SearchBox';
 
 function createSuggestions(values) {
-  if (values.includes('colonial')) {
+  if (values.includes('colonial') && values.includes('pothole')) {
+    return [];
+  } else if (values.includes('colonial')) {
     return [
       'pothole',
       'traffic'

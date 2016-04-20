@@ -29,7 +29,7 @@ class SearchBox extends Component {
   render() {
     return (
       <div>
-        <input type="text" className="searchBox" value={this.state.value} onChange={this.onChange}/>
+        <input type="text" className="existingComplaint" value={this.state.value} onChange={this.onChange}/>
         <br/>
         <div className="suggestionBox">
           {this.props.suggestions.map((suggestion, index) => {
