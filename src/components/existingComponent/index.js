@@ -7,21 +7,27 @@ class existingComplaint extends Component {
   constructor(props) {
     super(props);
     this.onClick = this.onClick.bind(this);
-    this.props.votes = 0;
+    this.state = {
+      votes: Number(this.props.votes)
+    }
   }
 
   onClick(event) {
-    alert('hi');
-    this.props.votes = this.props.votes + 1;
+    this.setState({votes: this.state.votes + 1});
   };
 
   render() {
     return (
       <div className='existingComplaint'>
-        <div onClick={() => this.onClick()} className='complaintVotes'><span className='voteEmoji'>😠</span> {this.props.votes}<div className='voteText'>Upvotes</div></div>
-        <div className='complaintTitle'><strong>title of message{this.props.title}</strong></div>
-        <div className='complaintBody'>body of message{this.props.body}</div>
-        <div className='complaintInfo'>Apr 19th, 2016 - Winter Park, FL</div>
+        <div onClick={() => this.onClick()} className='complaintVotes'>
+          <span className='voteEmoji'>😠</span> {this.state.votes}
+            <div className='voteText'>Upvotes</div>
+        </div>
+        <div className='complaintTitle'>
+          <strong>{this.props.title}</strong>
+        </div>
+        <div className='complaintBody'>{this.props.description}</div>
+        <div className='complaintInfo'>{this.props.date} - {this.props.location}</div>
       </div>
     );
   }

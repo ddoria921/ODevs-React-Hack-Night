@@ -54,7 +54,12 @@ class App extends React.Component {
         What are you complaining about?
       	<SearchBox onSearch={this.onSearch}
           suggestions={this.state.searching ? [] : this.state.suggestions} />
-        <ExistingComplaint />
+        <ExistingComplaint
+          title="Powerline down near Winter Park High"
+          description="There seems to be an inactive powerline down near the back of the school. I think it should be removed as soon as possible."
+          date="Apr 19th, 2016"
+          votes="82"
+          location="Winter Park, FL"/>
       </div>
     );
   }
