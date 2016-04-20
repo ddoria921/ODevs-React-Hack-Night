@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 class SearchSuggestion extends Component {
   render() {
     return (
-      <div>
+      <span>
         {this.props.suggestion}
-      </div>  
+        &nbsp;
+      </span>  
     );
   }
 }

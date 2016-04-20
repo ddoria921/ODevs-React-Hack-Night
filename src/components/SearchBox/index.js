@@ -6,21 +6,11 @@ class SearchBox extends Component {
   constructor(props) {
     super(props);
     this.onChange = this.onChange.bind(this);
-    this.state = {
-      suggestions: []
-    };
   }
 
   onChange(event) {
     this.setState({value: event.target.value}, () => {
-      setTimeout(() => {
-        this.setState({
-          suggestions: [
-            'colonial',
-            'pothole'
-          ]
-        })
-      }, 1000);
+      this.props.onSearch(this.state.value);
     });
   }
 
@@ -28,7 +18,8 @@ class SearchBox extends Component {
     return (
       <div>
         <input type="text" onChange={this.onChange}/>
-        {this.state.suggestions.map((suggestion, index) => {
+        <br/>
+        {this.props.suggestions.map((suggestion, index) => {
           return <Suggestion key={index} suggestion={suggestion} />
         })}
       </div>
