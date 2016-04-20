@@ -10,17 +10,18 @@ import ExistingComplaint from './components/existingComponent';
 import SearchBox from './components/SearchBox';
 
 function createSuggestions(values) {
-  if (values.includes('colonial') && values.includes('pothole')) {
+  if (values.includes('Power line down')) {
     return [];
-  } else if (values.includes('colonial')) {
+  } else if (values.includes('Winter Park')) {
     return [
-      'pothole',
-      'traffic'
+      'Power line down',
+      'Power outage'
     ]
-  } else if (values.includes('road')) {
+  } else if (values.includes('power')) {
     return [
-      'colonial',
-      'university'
+      'Winter Park',
+      'Orlando',
+      'Maitland'
     ];
   }
 
@@ -44,6 +45,7 @@ class App extends React.Component {
       setTimeout(() => {
         this.setState({
           searching: false,
+          search: value,
           suggestions: createSuggestions(value)
         })
       }, 1000);
@@ -51,17 +53,24 @@ class App extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        What are you complaining about?
-      	<SearchBox onSearch={this.onSearch}
-          suggestions={this.state.searching ? [] : this.state.suggestions} />
+    let complaint = null;
+    if (this.state.search && this.state.search.includes('Winter Park')) {
+      complaint = (
         <ExistingComplaint
           title="Powerline down near Winter Park High"
           description="There seems to be an inactive powerline down near the back of the school. I think it should be removed as soon as possible."
           date="Apr 19th, 2016"
           votes="82"
           location="Winter Park, FL"/>
+      );
+    }
+
+    return (
+      <div>
+        What are you complaining about?
+      	<SearchBox onSearch={this.onSearch}
+          suggestions={this.state.searching ? [] : this.state.suggestions} />
+        {complaint}
       </div>
     );
   }
