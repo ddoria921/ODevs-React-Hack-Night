@@ -7,12 +7,13 @@ import './styles/main.scss';
 
 // Import dependencies like this:
 import Goat from './components/goat-component';
+import ExistingComplaint from './components/existingComplaint';
 
 class App extends React.Component {
   render() {
     return (
       <div>
-      	<p>I heard React was good. <Goat /></p>
+      	<ExistingComplaint />
       </div>
     );
   }
