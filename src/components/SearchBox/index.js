@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import './index.scss';
+
 import Suggestion from './Suggestion';
 
 class SearchBox extends Component {
@@ -17,11 +19,13 @@ class SearchBox extends Component {
   render() {
     return (
       <div>
-        <input type="text" onChange={this.onChange}/>
+        <input type="text" className="searchBox" onChange={this.onChange}/>
         <br/>
-        {this.props.suggestions.map((suggestion, index) => {
-          return <Suggestion key={index} suggestion={suggestion} />
-        })}
+        <div className="suggestionBox">
+          {this.props.suggestions.map((suggestion, index) => {
+            return <Suggestion key={index} suggestion={suggestion} />
+          })}
+        </div>
       </div>
     );
   }

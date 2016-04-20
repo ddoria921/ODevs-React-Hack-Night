@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 
+import './index.scss'
+
 class SearchSuggestion extends Component {
   render() {
     return (
-      <span>
+      <span className="suggestionTag">
         {this.props.suggestion}
-        &nbsp;
       </span>  
     );
   }
