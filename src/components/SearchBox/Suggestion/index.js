@@ -5,13 +5,13 @@ import './index.scss'
 class SearchSuggestion extends Component {
   render() {
     return (
-      <div className="suggestionTag"
+      <div className="suggestionComponent"
         onClick={() => this.props.onAddSuggestion(this.props.suggestion)}>
         {this.props.suggestion}
-      </div>  
+      </div>
     );
   }
 }
 
 // Export dependencies like this:
-export default SearchSuggestion;    
+export default SearchSuggestion;
