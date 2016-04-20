@@ -17,10 +17,6 @@ class SubmissionForm extends React.Component {
     });
   }
 
-  handleAuthorChange(e) {
-    // this.setState({author: e.target.value});
-  }
-
   handleDescriptionChange(e) {
     this.setState({text: e.target.value});
   }
@@ -46,7 +42,9 @@ class SubmissionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     var author = this.state.author.trim();
-    var text = this.state.text.trim();
+    var text = this.state.description.trim();
+    var title = this.state.title.trim();
+
     if (!text || !author) {
       return;
     }
@@ -54,9 +52,9 @@ class SubmissionForm extends React.Component {
     // TODO: send request to the server
     if (typeof this.props.onPostSubmit === 'function') {
       this.props.onPostSubmit({
-        author: this.state.author,
-        title: this.state.title,
-        text: this.state.description,
+        author: author,
+        title: title,
+        text: text,
         tags: this.getTagsFrom(this.state.description),
         createdAt: new Date().toString()
       });
