@@ -9,6 +9,22 @@ import './styles/main.scss';
 import ExistingComplaint from './components/existingComplaint';
 import SearchBox from './components/SearchBox';
 
+function createSuggestions(values) {
+  if (values.includes('colonial')) {
+    return [
+      'pothole',
+      'traffic'
+    ]
+  } else if (values.includes('road')) {
+    return [
+      'colonial',
+      'university'
+    ];
+  }
+
+  return [];
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -19,21 +35,25 @@ class App extends React.Component {
   }
 
   onSearch(value) {
-    setTimeout(() => {
-      this.setState({
-        suggestions: [
-          'colonial',
-          'pothole'
-        ]
-      })
-    }, 1000);
+    this.setState({
+      searching: true
+    },
+      () => {
+      setTimeout(() => {
+        this.setState({
+          searching: false,
+          suggestions: createSuggestions(value)
+        })
+      }, 1000);
+    });
   }
 
   render() {
     return (
       <div>
         What are you complaining about?
-      	<SearchBox onSearch={this.onSearch} suggestions={this.state.suggestions} />
+      	<SearchBox onSearch={this.onSearch}
+          suggestions={this.state.searching ? [] : this.state.suggestions} />
         <ExistingComplaint />
       </div>
     );
