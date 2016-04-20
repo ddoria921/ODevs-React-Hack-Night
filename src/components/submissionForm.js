@@ -1,4 +1,5 @@
 import React from 'react';
+import './submissionForm.scss'
 
 class SubmissionForm extends React.Component {
 
@@ -13,12 +14,17 @@ class SubmissionForm extends React.Component {
   resetState() {
     this.setState({
       author: '',
-      description: ''
+      description: '',
+      title: ''
     });
   }
 
   handleDescriptionChange(e) {
-    this.setState({text: e.target.value});
+    this.setState({description: e.target.value});
+  }
+
+  handleAuthorChange(e) {
+    this.setState({author: e.target.value});
   }
 
   // @param text: string to parse
@@ -40,6 +46,7 @@ class SubmissionForm extends React.Component {
   }
 
   handleSubmit(e) {
+    console.log('Handling submit');
     e.preventDefault();
     var author = this.state.author.trim();
     var text = this.state.description.trim();
@@ -68,38 +75,40 @@ class SubmissionForm extends React.Component {
   render() {
     // console.log('Tags: ', this.getTagsFrom('Hello world #live'));
     return (
-      <form className="submissionForm" onSubmit={this.handleSubmit}>
+      <form className="submissionForm" onSubmit={() => {this.handleSubmit()}}>
         
-        <label htmlFor="author">Name</label>
-        <input
-          id="author"
-          type="text"
-          placeholder="name"
-          value={this.state.author}
-        />
+        <label htmlFor="author">
 
-        <label htmlFor="title">Title</label>
-        <input
-          id="title"
-          type="text"
-          placeholder="Crack in road"
-          value={this.state.title}
-        />
+          <input
+            id="author"
+            type="text"
+            placeholder="Name"
+            value={this.state.author}
+            onChange={this.handleAuthorChange}
+          />
+        </label>
 
-        <label htmlFor="submission_description">Description</label>
-        <textarea
-          id="submission_description"
-          type="text"
-          placeholder="Description goes here..."
-          value={this.state.description}
-          onChange={this.handleDescriptionChange}
-        />
+        <label htmlFor="title">
+
+          <input
+            id="title"
+            type="text"
+            placeholder="Crack in road"
+            value={this.state.title}
+          />
+        </label>
 
 
+        <label htmlFor="submission_description">
 
-
-
-
+          <textarea
+            id="submission_description"
+            type="text"
+            placeholder="Description goes here..."
+            value={this.state.description}
+            onChange={this.handleDescriptionChange}
+          />
+        </label>
 
         <input type="submit" value="Submit" />
       </form>
