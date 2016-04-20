@@ -5,9 +5,10 @@ import './index.scss'
 class SearchSuggestion extends Component {
   render() {
     return (
-      <span className="suggestionTag">
+      <div className="suggestionTag"
+        onClick={() => this.props.onAddSuggestion(this.props.suggestion)}>
         {this.props.suggestion}
-      </span>  
+      </div>  
     );
   }
 }
