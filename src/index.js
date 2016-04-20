@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './styles/main.scss';
 
 // Import dependencies like this:
-import ExistingComplaint from './components/existingComplaint';
+import ExistingComplaint from './components/existingComponent';
 import SearchBox from './components/SearchBox';
 
 function createSuggestions(values) {
