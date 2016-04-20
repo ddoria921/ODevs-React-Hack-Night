@@ -15,6 +15,8 @@ class SearchBox extends Component {
   addSuggestion(suggestion) {
     this.setState({
       value: this.state.value + ' ' + suggestion
+    }, () => {
+      this.props.onSearch(this.state.value);
     });
   }
 
